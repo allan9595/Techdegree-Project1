@@ -70,6 +70,10 @@ body {
   content: ", ";
   font-style: normal;
 }
+.tags:before {
+  content: ", ";
+  font-style: normal;
+}
 
 #loadQuote {
   position: fixed;

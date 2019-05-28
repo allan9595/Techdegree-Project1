@@ -27,6 +27,11 @@ var quotes = [
   {
     quote: 'In a room full of top software designers, if two agree on the same thing, that’s a majority.',
     source: 'Bill Curtis'
+  },
+  {
+    quote: "Don't cry because it's over, smile because it happened.",
+    source: 'Dr. Seuss',
+    tags: "#cry, crying, experience, happiness, joy, life, misattributed-dr-seuss, optimism, sadness, smile, smiling"
   }
 ]; //hard-code 5 quotes with their properties and assign it to quotes varible
 
@@ -55,12 +60,28 @@ function printQuote(){
   else if(randomQuote.year && !randomQuote.citation){
     html += '<p class="source">' + randomQuote.source + "<span class='year'>" + randomQuote.year + '</span>'+ '</p>';
     //if year exist but citation does not exist, only adding year and source to the string
-  } else {
+  } 
+  else if(randomQuote.tags){
+    html += '<p class="source">' + randomQuote.source + "<span class='tags'>" + randomQuote.tags + '</span>'+'</p>';
+  }
+  else {
     html += '<p class="source">' + randomQuote.source + '</p>'; //anything else, only add source to the string
   }
   var getId = document.getElementById('quote-box'); //find the html location which its id is quote-box
   getId.innerHTML = html; //assign the html to the innerHtml
 }
+
+setInterval(function(){printQuote()},2000); //print out a random quote every 1 second
+//code adapte from https://www.w3schools.com/jsref/met_win_setinterval.asp
+
+
+setInterval(
+  function () {
+    var randomColor = Math.floor(Math.random()*16777215).toString(16);//get a random color and convert it into hex
+    document.body.style.backgroundColor = "#"+randomColor;//use the obtained hex and set the css based on that random hex color
+  },2000); 
+  //code adapte from https://www.codespeedy.com/how-to-change-background-color-every-seconds-in-javascript/
+  //credits to Saruque Ahamed Mollick
 
 
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
