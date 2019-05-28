@@ -2,10 +2,7 @@
 
 **A Random Quote Generator** 
 
-
 ## Video Walkthrough
-
-Here's a walkthrough of implemented user stories (final sprint admin and team adding demo):
 
 <img src='https://github.com/allan9595/Techdegree-Project1/blob/master/walkthrough1.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
